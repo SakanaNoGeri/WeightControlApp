@@ -11,7 +11,7 @@ public interface UserMapper {
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "dailyCalorieNorm", ignore = true)
-    UserEntity toUserEntity(UserRequest request);
+    UserEntity userRequestToUserEntity(UserRequest request);
 
-    UserResponse toUserResponse(UserEntity entity);
+    UserResponse userEntityToUserResponse(UserEntity entity);
 }

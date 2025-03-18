@@ -34,12 +34,12 @@ public class UserServiceImpl implements UserService {
                 .ifPresent(userEntity -> {
                     throw new CustomException(ErrorCodes.USER_ALREADY_EXISTS);
                 });
-        UserEntity userEntity = userMapper.toUserEntity(userRequest);
+        UserEntity userEntity = userMapper.userRequestToUserEntity(userRequest);
         userEntity.setDailyCalorieNorm(evaluateDailyNorm(userEntity.getWeight(),
                 userEntity.getHeight(),
                 userEntity.getAge()));
         userRepository.save(userEntity);
-        return userMapper.toUserResponse(userEntity);
+        return userMapper.userEntityToUserResponse(userEntity);
     }
 
     public Double evaluateDailyNorm(Double weight, Double height, Integer age) {

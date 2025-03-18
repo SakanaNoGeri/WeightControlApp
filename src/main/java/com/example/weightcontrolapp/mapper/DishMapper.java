@@ -13,7 +13,7 @@ public interface DishMapper {
     @Mapping(target = "id", ignore = true)
     DishEntity dishRequestToDishEntity(DishRequest request);
 
-    PublicDishResponse toPublicDishResponse(DishEntity entity);
+    PublicDishResponse dishEntityToPublicDishResponse(DishEntity entity);
 
     List<PublicDishResponse> toListPublicDishResponse(List<DishEntity> entities);
 }

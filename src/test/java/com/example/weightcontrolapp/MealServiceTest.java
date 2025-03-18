@@ -91,9 +91,9 @@ public class MealServiceTest {
     void createMeal_Success() {
         when(userRepository.findById(TEST_UUID)).thenReturn(Optional.of(userEntity));
         when(dishRepository.findAllById(List.of(TEST_ID))).thenReturn(List.of(dishEntity));
-        when(mealMapper.toMealEntity(mealRequest)).thenReturn(mealEntity);
+        when(mealMapper.mealRequestToMealEntity(mealRequest)).thenReturn(mealEntity);
         when(mealRepository.save(mealEntity)).thenReturn(mealEntity);
-        when(mealMapper.toMealResponse(mealEntity)).thenReturn(mealResponse);
+        when(mealMapper.mealEntityToMealResponse(mealEntity)).thenReturn(mealResponse);
 
         MealResponse result = mealService.createMeal(mealRequest);
 

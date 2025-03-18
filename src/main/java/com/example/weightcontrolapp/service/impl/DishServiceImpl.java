@@ -28,7 +28,7 @@ public class DishServiceImpl implements DishService {
     public PublicDishResponse createDish(DishRequest dishRequest) {
         DishEntity dishEntity = dishMapper.dishRequestToDishEntity(dishRequest);
         dishRepository.save(dishEntity);
-        return dishMapper.toPublicDishResponse(dishEntity);
+        return dishMapper.dishEntityToPublicDishResponse(dishEntity);
     }
 
     @Override

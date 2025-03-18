@@ -43,7 +43,7 @@ public class ReportServiceImpl implements ReportService {
 
         List<MealEntity> meals = mealRepository.findByUserAndDateTimeBetween(user, startOfDay, endOfDay);
         List<MealResponse> mealResponses = meals.stream()
-                .map(mealMapper::toMealResponse)
+                .map(mealMapper::mealEntityToMealResponse)
                 .collect(Collectors.toList());
 
         Double totalCalories = mealResponses.stream()
@@ -67,7 +67,7 @@ public class ReportServiceImpl implements ReportService {
 
         List<MealEntity> meals = mealRepository.findByUserAndDateTimeBetween(user, startOfDay, endOfDay);
         List<MealResponse> mealResponses = meals.stream()
-                .map(mealMapper::toMealResponse)
+                .map(mealMapper::mealEntityToMealResponse)
                 .toList();
 
         Double totalCalories = mealResponses.stream()
@@ -89,7 +89,7 @@ public class ReportServiceImpl implements ReportService {
 
         List<MealEntity> meals = mealRepository.findByUser(user);
         Map<LocalDate, List<MealResponse>> mealsByDay = meals.stream()
-                .map(mealMapper::toMealResponse)
+                .map(mealMapper::mealEntityToMealResponse)
                 .collect(Collectors.groupingBy(
                         meal -> meal.getDateTime().toLocalDate(),
                         Collectors.toList()

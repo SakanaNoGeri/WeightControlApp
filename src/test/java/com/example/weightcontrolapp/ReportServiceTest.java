@@ -93,7 +93,7 @@ public class ReportServiceTest {
         when(mealRepository.findByUserAndDateTimeBetween(
                 userEntity, testDate.atStartOfDay(), testDate.atTime(LocalTime.MAX)))
                 .thenReturn(List.of(mealEntity));
-        when(mealMapper.toMealResponse(mealEntity)).thenReturn(mealResponse);
+        when(mealMapper.mealEntityToMealResponse(mealEntity)).thenReturn(mealResponse);
 
         DailyReportResponse result = reportService.getDailyReport(TEST_UUID, testDate);
 
@@ -118,7 +118,7 @@ public class ReportServiceTest {
         when(mealRepository.findByUserAndDateTimeBetween(
                 userEntity, testDate.atStartOfDay(), testDate.atTime(LocalTime.MAX)))
                 .thenReturn(List.of(mealEntity));
-        when(mealMapper.toMealResponse(mealEntity)).thenReturn(mealResponse);
+        when(mealMapper.mealEntityToMealResponse(mealEntity)).thenReturn(mealResponse);
 
         NormCheckResponse result = reportService.checkDailyNorm(TEST_UUID, testDate);
 
@@ -141,7 +141,7 @@ public class ReportServiceTest {
     void getMealHistory_Success() {
         when(userRepository.findById(TEST_UUID)).thenReturn(Optional.of(userEntity));
         when(mealRepository.findByUser(userEntity)).thenReturn(List.of(mealEntity));
-        when(mealMapper.toMealResponse(mealEntity)).thenReturn(mealResponse);
+        when(mealMapper.mealEntityToMealResponse(mealEntity)).thenReturn(mealResponse);
 
         HistoryResponse result = reportService.getMealHistory(TEST_UUID);
 

@@ -76,9 +76,9 @@ public class UserServiceTest {
     @Test
     void createUser_Success() {
         when(userRepository.findByEmail(TEST_EMAIL)).thenReturn(Optional.empty());
-        when(userMapper.toUserEntity(userRequest)).thenReturn(userEntity);
+        when(userMapper.userRequestToUserEntity(userRequest)).thenReturn(userEntity);
         when(userRepository.save(userEntity)).thenReturn(userEntity);
-        when(userMapper.toUserResponse(userEntity)).thenReturn(userResponse);
+        when(userMapper.userEntityToUserResponse(userEntity)).thenReturn(userResponse);
 
         UserResponse result = userService.createUser(userRequest);
 

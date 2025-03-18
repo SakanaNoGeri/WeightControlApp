@@ -81,7 +81,7 @@ public class DishServiceTest {
     void createDish_Success() {
         when(dishMapper.dishRequestToDishEntity(dishRequest)).thenReturn(dishEntity);
         when(dishRepository.save(dishEntity)).thenReturn(dishEntity);
-        when(dishMapper.toPublicDishResponse(dishEntity)).thenReturn(dishResponse);
+        when(dishMapper.dishEntityToPublicDishResponse(dishEntity)).thenReturn(dishResponse);
 
         PublicDishResponse result = dishService.createDish(dishRequest);
 

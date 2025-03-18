@@ -12,8 +12,8 @@ public interface MealMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "user", ignore = true)
     @Mapping(target = "dishes", ignore = true)
-    MealEntity toMealEntity(MealRequest request);
+    MealEntity mealRequestToMealEntity(MealRequest request);
 
     @Mapping(target = "userId", source = "user.id")
-    MealResponse toMealResponse(MealEntity entity);
+    MealResponse mealEntityToMealResponse(MealEntity entity);
 }

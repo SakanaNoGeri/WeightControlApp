@@ -41,11 +41,11 @@ public class MealServiceImpl implements MealService {
             throw new CustomException(ErrorCodes.DISH_NOT_FOUND);
         }
 
-        MealEntity mealEntity = mealMapper.toMealEntity(mealRequest);
+        MealEntity mealEntity = mealMapper.mealRequestToMealEntity(mealRequest);
         mealEntity.setUser(user);
         mealEntity.setDishes(dishes);
 
         mealRepository.save(mealEntity);
-        return mealMapper.toMealResponse(mealEntity);
+        return mealMapper.mealEntityToMealResponse(mealEntity);
     }
 }
