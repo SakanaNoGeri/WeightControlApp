@@ -50,3 +50,4 @@ target/
 /amplicode.xml
 /src/main/java/**/TestClass.java
 /gradle/
+/src/main/java/com/example/weightcontrolapp/quick_tests/
