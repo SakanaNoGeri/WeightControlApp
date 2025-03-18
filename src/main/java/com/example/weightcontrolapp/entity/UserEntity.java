@@ -30,6 +30,8 @@ public class UserEntity {
 
     private Integer age;
 
+    private Double weight;
+
     private Double height;
 
     @Enumerated(EnumType.STRING)

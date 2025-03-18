@@ -1,11 +1,10 @@
 package com.example.weightcontrolapp.service;
 
 import com.example.weightcontrolapp.dto.request.CreateUserRequest;
+import com.example.weightcontrolapp.dto.request.PutUserRequest;
 import com.example.weightcontrolapp.dto.response.CreateUserResponse;
 import com.example.weightcontrolapp.dto.response.PublicUserResponse;
-import com.example.weightcontrolapp.entity.UserEntity;
 import java.util.List;
-import java.util.UUID;
 
 public interface UserService {
 
@@ -15,5 +14,5 @@ public interface UserService {
 
     List<PublicUserResponse> getAllUsersInfo();
 
-    UserEntity getUserEntityByIdOrThrow(UUID userId);
+    PublicUserResponse replaceUser(PutUserRequest putUserRequest);
 }
