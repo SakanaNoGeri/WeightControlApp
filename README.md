@@ -14,7 +14,7 @@
     Java 17+
     Gradle 8.x
     Docker (для запуска PostgreSQL через docker-compose.yaml)
-    PostgreSQL 16 (при локальном запуске локально)
+    PostgreSQL 16 (при запуске локально)
     
 ## Инструкция по запуску
 1. Поднять PostgresQL локально или же при помощи docker-compose, который находится в папке ресурсов программы. Postgres поднимается на стандартном 5432 порте по умолчанию.
@@ -22,6 +22,6 @@
 ``` text
 docker-compose up -d
 ```
-3. Собрать основное приложение, запустить
+2. Собрать основное приложение, запустить
 
-Ссылка на коллекцию Postman
+Ссылка на коллекцию Postman https://elements.getpostman.com/redirect?entityId=40143606-c9cc12bb-9b4b-40c7-a4ec-2785167a0a50&entityType=collection
