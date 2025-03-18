@@ -2,7 +2,9 @@ services:
   postgres:
     image: postgres:latest
     container_name: weight_control_postgres
+    environment:
+      POSTGRES_DB: weight_control
+      POSTGRES_USER: testUser
+      POSTGRES_PASSWORD: testPassword
     ports:
       - "5432:5432"
-    env_file:
-      - .env
