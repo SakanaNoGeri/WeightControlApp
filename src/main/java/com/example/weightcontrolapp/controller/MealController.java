@@ -1,9 +1,9 @@
 package com.example.weightcontrolapp.controller;
 
-import com.example.weightcontrolapp.dto.request.UserRequest;
-import com.example.weightcontrolapp.dto.response.UserResponse;
+import com.example.weightcontrolapp.dto.request.MealRequest;
+import com.example.weightcontrolapp.dto.response.MealResponse;
 import com.example.weightcontrolapp.dto.response.commonResponse.CustomSuccessResponse;
-import com.example.weightcontrolapp.service.UserService;
+import com.example.weightcontrolapp.service.MealService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,15 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/user")
+@RequestMapping("/meal")
 @Validated
-public class UserController {
-
-    private final UserService userService;
+public class MealController {
+    private final MealService mealService;
 
     @PostMapping
-    public ResponseEntity<CustomSuccessResponse<UserResponse>> createUser(
-            @RequestBody @Valid UserRequest userRequest) {
-        return ResponseEntity.ok(new CustomSuccessResponse<>(userService.createUser(userRequest)));
+    public ResponseEntity<CustomSuccessResponse<MealResponse>> createMeal(
+            @RequestBody @Valid MealRequest mealRequest) {
+        return ResponseEntity.ok(new CustomSuccessResponse<>(mealService.createMeal(mealRequest)));
     }
 }

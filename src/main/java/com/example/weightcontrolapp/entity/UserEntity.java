@@ -36,4 +36,6 @@ public class UserEntity {
 
     @Enumerated(EnumType.STRING)
     private Goal goal;
+
+    private Double dailyCalorieNorm;
 }
